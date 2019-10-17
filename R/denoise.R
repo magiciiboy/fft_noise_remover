@@ -13,7 +13,7 @@ myfilter<-function(decay,len){
 remove_noise = function (DataSignal, removeImpluse, lowpassDecayFreq){
   #' @param DataSignal a vector of signal
   #' @param removeImpluse a boolean value to turn on/off feature of removing harmonic noise 
-  #' @param lowpassDecayFreq the frequency thredhold that all signal components having high freq will be remove
+  #' @param lowpassDecayFreq the frequency thredhold that all signal components having higher freq will be removed
   #' @return vector of clean signal
   #' @examples remove_noise(ds, removeImpluse=T, lowpassDecayFreq=0.2)
   lowpassDecayValue = 0.01
