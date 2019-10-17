@@ -1,2 +1,3 @@
-# fft_denoise
-Denoise time series data with FFT
+# FFT Noise Remover
+
+Noise Remover for time-serie data with FFT
