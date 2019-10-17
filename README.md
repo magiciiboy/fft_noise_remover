@@ -2,7 +2,7 @@
 
 Noise Remover for time-serie data with FFT with implemetations in R and Python:
 
-# Status
+## Status
 
 - R (Ready)
 - Python (In progress)
