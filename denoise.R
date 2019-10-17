@@ -10,9 +10,10 @@ myfilter<-function(decay,len){
   c(y,y1)
 }
 
-remove_noise = function (DataSignal, removeImpluse, lowpassDecay){
-  if(missing(lowpassDecay)) {
-    lowpassDecay = 0.01 # 0.0025 
+remove_noise = function (DataSignal, removeImpluse, lowpassDecayFreq){
+  lowpassDecayValue = 0.01
+  if(!missing(lowpassDecayFreq)) {
+    lowpassDecayValue = 1/(length(DataSignal) * lowpassDecayFreq)
   }
   if(missing(removeImpluse)) {
     removeImpluse = 1
@@ -69,7 +70,7 @@ remove_noise = function (DataSignal, removeImpluse, lowpassDecay){
   print(Tfft)
   
   #3)-----------Create Lowpass filter---------------------------------- 
-  filter = myfilter(lowpassDecay,sizeOf_fft)
+  filter = myfilter(lowpassDecayValue,sizeOf_fft)
   
   #4)-----------Apply Lowpass filter---------------------------------- 
   Tnr = Tfft*t(t(filter))
