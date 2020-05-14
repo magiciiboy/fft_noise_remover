@@ -75,7 +75,15 @@ test_extract_freqs <- function(da.freq=2000, signal.freqs=c(50, 130), time=5) {
   }
 }
 
-# Run the test
+# Test with high freq signals
 test_extract_freqs(da.freq=2000, signal.freqs = c(50, 100), time=5)
 test_extract_freqs(da.freq=4000, signal.freqs = c(25, 120, 155), time=50)
+
+# Test with low freq signals
+# Notes: Please remember for simulated signals, signal frequencies must be less than 
+# data acquisition frequencies.
+test_extract_freqs(da.freq=10, signal.freqs = c(0.5, 1, 2, 4), time=900)
+test_extract_freqs(da.freq=10, signal.freqs = c(0.5, 1, 2, 3, 4), time=900)
+
+
 
