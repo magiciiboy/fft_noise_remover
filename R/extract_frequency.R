@@ -37,6 +37,10 @@ test_extract_freqs <- function(da.freq=2000, signal.freqs=c(50, 130), time=5) {
   # @param signal.freqs: vector of frequencies of nth signal in Hz
   # @param time: in seconds
   
+  if (length(which(signal.freqs > da.freq)) > 0) {
+    stop("Signal freqs must be less than data acquisition freq.")
+  }
+  
   # Order
   signal.freqs <- sort(signal.freqs)
   
